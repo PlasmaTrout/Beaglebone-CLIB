@@ -1,0 +1,33 @@
+Usage (Alpha Stages)
+
+To get the source (which you must have done already) do a:
+
+git clone git@bitbucket.org:jdowning/beaglebone-clib.git
+
+For compiling the blinktest application and running it do a:
+
+build_library.sh
+
+this creates the status beaglebone library and installs it in /usr/lib
+
+then run
+
+build_blinktest.sh
+
+and then run by executing..
+
+./blinktest
+
+you will have to hit ctrl-c to stop the blinking. If you need to fully reset
+the ports after the application was ran run the following scripts seperately:
+
+echo 0 > /sys/class/gpio/gpio38/value 
+echo 38 > /sys/class/gpio/unexport
+
+This will shut the power off to pin 3 and then unexport the port.
+
+** Its port 38 because port numbers are notated by taked the actual design name
+** of the pin, in this case GPIO1_6, and multiplying 32 by the first number and
+** adding the second. So 32x1+6 is the actual pin number. These translations
+** are done for you in the C headers so use the macros PIN3, PIN4, ETC and dont
+** worry about the actual port unless you are controling the ports via shell.
