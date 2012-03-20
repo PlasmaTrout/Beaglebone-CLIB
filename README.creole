@@ -27,7 +27,7 @@ To test application functionality (and have a working example) you can build the
 {{{
 ./build_blinktest.sh
 }}}
-This will build a blink test that can test an LED placed on PIN 3 of P8. If you want to see how simple the code is for this example look at the [[https://bitbucket.org/jdowning/beaglebone-clib/src/c5f8df33a334/src/blinktest.c|blinktest.c]] source code.
+This will build a blink test that can test an LED placed on PIN 3 of P8. If you want to see how simple the code is for this example look at the [[https://github.com/PlasmaTrout/Beaglebone-CLIB/blob/master/src/blinktest.c]] source code.
 
 You will have to hit ctrl-c to stop the blinking. If you need to fully reset
 the ports after the application was ran run the following scripts seperately:
