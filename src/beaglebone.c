@@ -12,7 +12,9 @@ void gpio_export(unsigned int value){
     strcpy(prefix,GPIO_DIR);
     strcat(prefix,GPIO_EXPORT_SUFFIX);
     
-    printf("Writing %i to %s\n",value,prefix);
+    #ifdef DEBUG
+        printf("Writing %i to %s\n",value,prefix);
+    #endif
     
     FILE *fd;
     fd = fopen(prefix,"w");
@@ -40,7 +42,9 @@ void gpio_set_direction(unsigned int direction, unsigned int pin){
         strcpy(direction_name, "out");
     }
     
-    printf("Writing %s to %s\n",direction_name,prefix);
+    #ifdef DEBUG
+        printf("Writing %s to %s\n",direction_name,prefix);
+    #endif
     
     FILE *fd;
     fd = fopen(prefix,"w");
@@ -64,7 +68,9 @@ void gpio_set(unsigned int value, unsigned int pin){
       value_to_write = 1;   
     }
     
-    printf("Writing %i to %s\n",value_to_write,prefix);
+    #ifdef DEBUG
+        printf("Writing %i to %s\n",value_to_write,prefix);
+    #endif
     
     FILE *fd;
     fd = fopen(prefix,"w");
@@ -80,7 +86,9 @@ void gpio_unexport(unsigned int value){
     strcpy(prefix,GPIO_DIR);
     strcat(prefix,GPIO_UNEXPORT_SUFFIX);
     
-    printf("Writing %i to %s\n",value,prefix);
+    #ifdef DEBUG
+        printf("Writing %i to %s\n",value,prefix);
+    #endif
     
     FILE *fd;
     fd = fopen(prefix,"w");
@@ -88,5 +96,42 @@ void gpio_unexport(unsigned int value){
     fprintf(fd,"%i",value);
     fclose(fd);
     
+}
+
+unsigned int gpio_read(unsigned int pin){
+    char port[24];
+    unsigned int value_to_read = 0;
+    
+    sprintf(port,"gpio%i/value",pin);
+    
+    char prefix[255];
+    strcpy(prefix, GPIO_DIR);
+    strcat(prefix, port);  
+    
+    FILE *fd;
+    fd = fopen(prefix,"r");
+    fscanf(fd,"%u",&value_to_read);
+    
+    #ifdef DEBUG
+        printf("Reading %s value received ",prefix);
+        printf("%i.\n",value_to_read);
+    #endif
+
+    fclose(fd);
+    
+    return value_to_read;
+}
+
+void pinMode(unsigned int pin, unsigned int direction){
+    gpio_export(pin);
+    gpio_set_direction(direction,pin);
+}
+
+void digitalWrite(unsigned int pin, unsigned int value){
+    gpio_set(value,pin);
+}
+
+unsigned int digitalRead(unsigned int pin){
+    return gpio_read(pin);   
 }
 
