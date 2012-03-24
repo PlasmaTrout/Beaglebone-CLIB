@@ -8,7 +8,7 @@ Before you grab the source, make sure you locate your cloud9 directory (if your 
 To get the source (which you must have done already) do a:
 
 {{{
-git clone git@bitbucket.org:jdowning/beaglebone-clib.git
+git clone git@github.com:PlasmaTrout/Beaglebone-CLIB.git
 }}}
 
 This release builds a static library and installs it so that apps can function as simply
@@ -40,5 +40,5 @@ This will shut the power off to pin 3 and then unexport the port.
 //Its port 38 because port numbers are notated by taked the actual design name
 of the pin, in this case GPIO1_6, and multiplying 32 by the first number and
 adding the second. So 32x1+6 is the actual pin number. These translations
-are done for you in the C headers so use the macros PIN3, PIN4, ETC and don't
+are done for you in the C headers so use the macros PIN8_3, PIN8_4, ETC and don't
 worry about the actual port unless you are controling the ports via shell//
