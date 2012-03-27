@@ -46,6 +46,26 @@
 #define PIN8_45 38
 #define PIN8_46 39
 
-#define PIN9_
+#define MODE0 0x000
+#define MODE1 0x001
+#define MODE2 0x002
+#define MODE3 0x003
+#define MODE4 0x004
+#define MODE5 0x005
+#define MODE6 0x006
+#define MODE7 0x007
+
+typedef struct {
+    char muxname[20];
+    char pinname[10];
+    int pinnumber;
+    int ionumber;
+} Pin;
+
+
+
+
+
+Pin findPin(int header,int pin);
 
 #endif
