@@ -16,7 +16,7 @@ void setup();
 void loop();
 
 void pinMode(unsigned int pin, unsigned int direction);
-void digialWrite(unsigned int pin, unsigned int value);
+void digitalWrite(unsigned int pin, unsigned int value);
 unsigned int digitalRead(unsigned int pin);
 
 void gpio_export(unsigned int pin);
