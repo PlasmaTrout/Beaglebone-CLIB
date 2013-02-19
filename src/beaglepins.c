@@ -5,8 +5,8 @@
 #define MUXPATH "/sys/kernel/debug/omap_mux"
 
 Pin header8[46] = {
-  {"","",1,0},
-  {"","",2,0},
+  {"gnd","GND",1,0},
+  {"gmd","GND",2,0},
   {"gpmc_ad6","GPIO1_6",3,PIN8_3},
   {"gpmc_ad7","GPIO1_7",4,PIN8_4},
   {"gpmc_ad2","GPIO1_2",5,PIN8_5},
@@ -54,18 +54,16 @@ Pin header8[46] = {
 };
 
 Pin header9[46] = {
-  {
-      "GND",
-      "",
-      1,
-      0
-  },
-  {
-      "GND",
-      "",
-      2,
-      0
-  }
+   { "gnd","GND",1,0 },
+   { "gnd","GND",2,0 },
+   { "VDD_3V3EXP ","DC_3.3",3,0 },
+   { "VDD_3V3EXP ","DC_3.3",4,0 },
+   { "VDD_5V","VDD_5V",5,0 },
+   { "VDD_5V","VDD_5V",6,0 },
+   { "SYS_5V","SYS_5V",7,0 },
+   { "SYS_5V","SYS_5V",8,0 },
+   { "PWR_BUT*","PWR_BUT*",9.0 },
+   { "SYS_RESETn","SYS_RESETn",10,0 }
 };
 
 
