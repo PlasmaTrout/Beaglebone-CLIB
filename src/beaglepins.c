@@ -66,7 +66,6 @@ Pin header9[46] = {
    { "SYS_RESETn","SYS_RESETn",10,0 }
 };
 
-
 Pin findPinInHeader(Pin *array,int pin){
     int counter = 0;
     

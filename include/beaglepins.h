@@ -12,7 +12,7 @@
 #define PIN8_11 45
 #define PIN8_12 44
 #define PIN8_13 23
-#define PIN8_14 32
+#define PIN8_14 26
 #define PIN8_15 47
 #define PIN8_16 46
 #define PIN8_17 27
@@ -62,8 +62,15 @@ typedef struct {
     int ionumber;
 } Pin;
 
-
-
+typedef enum {
+    RESERVED1 = 1,
+    RESERVED2 = 2,
+    RESERVED3 = 4,
+    DISABLE_PULLUP_RESISTOR = 8,
+    PULL_UP_NOT_DOWN = 16,
+    RX_ENABLED = 32,
+    SLEW_SLOW = 64
+} MuxMode;
 
 
 Pin findPin(int header,int pin);
