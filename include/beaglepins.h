@@ -74,5 +74,6 @@ typedef enum {
 
 
 Pin findPin(int header,int pin);
+void muxPin(Pin pin,int mode); 
 
 #endif

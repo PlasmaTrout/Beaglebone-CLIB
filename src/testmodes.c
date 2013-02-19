@@ -41,6 +41,17 @@ int main(){
     model = 5 | RX_ENABLED;
     printf("Mux Mode 5 Receive Enabled is 0x%X \n",model);
     
+    Pin pin = findPin(8,25);
+    printf("Setting pin %s to rx enabled...\n",pin.muxname);
+    muxPin(pin,model);
+    printf("Setting pin back...\n");
+    muxPin(pin,7);
+    printf("Setting to receive using mode...\n");
+    pinMode(PIN8_25,INPUT);
+    
+    //cat /sys/kernel/debug/omap_mux/gpmc_ad0
+
+    
      model = 7 | RX_ENABLED;
     printf("Mux Mode 7 Receive Enabled is 0x%X \n",model);
     

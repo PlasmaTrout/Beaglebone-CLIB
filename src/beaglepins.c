@@ -1,8 +1,9 @@
 #include <stdio.h>
+#include <string.h>
 
 #include "../include/beaglepins.h"
 
-#define MUXPATH "/sys/kernel/debug/omap_mux"
+#define MUXPATH "/sys/kernel/debug/omap_mux/"
 
 Pin header8[46] = {
   {"gnd","GND",1,0},
@@ -89,5 +90,20 @@ Pin findPin(int header,int pin){
     
     return returnPin;
     
+}
+
+void muxPin(Pin pin,int mode){
+    
+    char prefix[255];
+    strcpy(prefix,MUXPATH);
+    strcat(prefix,pin.muxname);
+    
+    printf("Muxing %s \n",prefix);
+    
+    FILE *fd;
+    fd = fopen(prefix,"w");
+    
+    fprintf(fd,"0x%X",mode);
+    fclose(fd);
 }
 
