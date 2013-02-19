@@ -43,8 +43,8 @@
 #define PIN8_42 75
 #define PIN8_43 72
 #define PIN8_44 73
-#define PIN8_45 38
-#define PIN8_46 39
+#define PIN8_45 70
+#define PIN8_46 71
 
 #define MODE0 0x000
 #define MODE1 0x001
