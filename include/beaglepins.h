@@ -46,6 +46,30 @@
 #define PIN8_45 70
 #define PIN8_46 71
 
+#define PIN9_11 30
+#define PIN9_12 48
+#define PIN9_13 31
+#define PIN9_14 50
+#define PIN9_15 48
+#define PIN9_16 51
+#define PIN9_17 5
+#define PIN9_18 4
+#define PIN9_19 13
+#define PIN9_20 12
+#define PIN9_21 3
+#define PIN9_22 2
+#define PIN9_23 49
+#define PIN9_24 15
+#define PIN9_25 117
+#define PIN9_26 14
+#define PIN9_27 115
+#define PIN9_28 113
+#define PIN9_29 111
+#define PIN9_30 112
+#define PIN9_31 110
+#define PIN9_41 20
+#define PIN9_42 7
+
 #define MODE0 0x000
 #define MODE1 0x001
 #define MODE2 0x002
